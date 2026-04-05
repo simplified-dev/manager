@@ -3,7 +3,7 @@ package dev.simplified.manager;
 import dev.simplified.manager.exception.InsufficientModeException;
 import dev.simplified.manager.exception.RegisteredReferenceException;
 import dev.simplified.manager.exception.UnknownReferenceException;
-import dev.simplified.tuple.pair.Pair;
+import dev.simplified.collection.tuple.pair.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
