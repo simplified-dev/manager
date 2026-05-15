@@ -200,13 +200,19 @@ public abstract class Manager<K, V> {
          */
         ALL(2, true, true);
 
-        /** The numeric level used for permission comparisons. */
+        /**
+         * The numeric level used for permission comparisons.
+         */
         private final int level;
 
-        /** Whether this mode permits updating existing entries. */
+        /**
+         * Whether this mode permits updating existing entries.
+         */
         private final boolean updateEnabled;
 
-        /** Whether this mode permits removing existing entries. */
+        /**
+         * Whether this mode permits removing existing entries.
+         */
         private final boolean removeEnabled;
 
     }
