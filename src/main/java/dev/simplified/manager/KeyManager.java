@@ -3,7 +3,6 @@ package dev.simplified.manager;
 import dev.simplified.manager.exception.InsufficientModeException;
 import dev.simplified.manager.exception.RegisteredReferenceException;
 import dev.simplified.manager.exception.UnknownReferenceException;
-import dev.simplified.collection.tuple.pair.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -76,20 +75,6 @@ public class KeyManager extends Manager<String, String> {
      */
     public final void add(@NotNull String identifier, @NotNull Optional<String> value) throws RegisteredReferenceException {
         value.ifPresent(v -> this.add(identifier, v));
-    }
-
-    /**
-     * Registers a key-value pair extracted from a {@link Pair} whose value is optional.
-     * <p>
-     * If the pair's value is empty, this method is a no-op. This is convenient for use with
-     * environment-variable helpers that return {@code Pair<String, Optional<String>>}.
-     *
-     * @param pair a pair containing the key and an optional value
-     * @throws RegisteredReferenceException if the key is already registered
-     * @see dev.simplified.util.SystemUtil#getEnvPair(String)
-     */
-    public final void add(@NotNull Pair<String, Optional<String>> pair) throws RegisteredReferenceException {
-        pair.getValue().ifPresent(value -> this.add(pair.getKey(), value));
     }
 
     /**
